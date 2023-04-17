@@ -21,3 +21,7 @@ D:\user\escritorio\chat project\clientTCP\chatAppClient\obj\Debug\net6.0-windows
 D:\user\escritorio\chat project\clientTCP\chatAppClient\obj\Debug\net6.0-windows\chatAppClient.pdb
 D:\user\escritorio\chat project\clientTCP\chatAppClient\obj\Debug\net6.0-windows\chatAppClient.genruntimeconfig.cache
 D:\user\escritorio\chat project\clientTCP\chatAppClient\obj\Debug\net6.0-windows\ref\chatAppClient.dll
+D:\user\escritorio\chat project\clientTCP\chatAppClient\obj\Debug\net6.0-windows\View\ChatView.g.cs
+D:\user\escritorio\chat project\clientTCP\chatAppClient\obj\Debug\net6.0-windows\View\ChatView.baml
+D:\user\escritorio\chat project\clientTCP\chatAppClient\bin\Debug\net6.0-windows\MySqlConnector.dll
+D:\user\escritorio\chat project\clientTCP\chatAppClient\obj\Debug\net6.0-windows\chatAppClient.csproj.CopyComplete

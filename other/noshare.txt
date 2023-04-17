@@ -1,0 +1,1 @@
+server=172.104.250.232;port=3306;database=socketDB;uid=seveneleven;password=butterchicken;

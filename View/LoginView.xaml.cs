@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chatAppClient.PureCSClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,16 @@ namespace chatAppClient.View
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            Database db = new Database();
+            if (db.validateUser(txtBoxUsername.Text, txtBoxPassword.Password.ToString()))
+            {
+                this.NavigationService.Navigate(new ChatView(txtBoxUsername.Text));
+            }
+            else
+            {
+                MessageBox.Show("wrong credentials");
+            }
         }
+
     }
 }
