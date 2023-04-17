@@ -140,10 +140,6 @@ namespace chatAppClient.PureCSClass
 
     }
 
-
-
-    
-
     internal class User
     {
 
@@ -154,6 +150,7 @@ namespace chatAppClient.PureCSClass
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
         public String UserStatus { get => userStatus;set => userStatus = value; }
+
 
     }
 }

@@ -35,7 +35,7 @@ namespace chatAppClient.View
             }
             else
             {
-                MessageBox.Show("wrong credentials");
+                MessageBox.Show("access denied");
             }
         }
 
