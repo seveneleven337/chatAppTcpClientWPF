@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chatAppClient.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,31 @@ namespace chatAppClient
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += MyWindow_Loaded;
         }
+
+        public void MyWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new LoginView());
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 }
