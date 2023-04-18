@@ -69,6 +69,16 @@ namespace chatAppClient.PureCSClass
             return check;
         }
 
+        public void registerUser(string userName, string password)                                                          //register new user after be check allowad regex
+        {
+            if (validateInputField(userName, password))
+            {
+                entryDb(userName, password, "active");
+            }
+        }
+
+
+
         private List<User> ReadDb()                                                                                         //get the list of user and password from DB
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -115,7 +125,7 @@ namespace chatAppClient.PureCSClass
             }
         }
 
-        private bool validateInputField(String userName, String password)                                                                                       //validate data to avoid sql injections
+        public bool validateInputField(String userName, String password)                                                                                       //validate data to avoid sql injections
         {
             bool status = false;
 

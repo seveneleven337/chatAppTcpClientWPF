@@ -29,9 +29,9 @@ namespace chatAppClient.View
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             Database db = new Database();
-            if (db.validateUser(txtBoxUsername.Text, txtBoxPassword.Password.ToString()))
+            if (db.validateUser(txtBoxUsername.Text, txtBoxPassword.Password.ToString()))               //validate user in mariadb 
             {
-                this.NavigationService.Navigate(new ChatView(txtBoxUsername.Text));
+                this.NavigationService.Navigate(new ChatView(txtBoxUsername.Text));                     //move to chat page after auth
             }
             else
             {
@@ -39,5 +39,9 @@ namespace chatAppClient.View
             }
         }
 
+        private void txtNotRegistered_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new RegisterView());                                        //move to registration page
+        }
     }
 }
