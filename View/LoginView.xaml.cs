@@ -28,7 +28,8 @@ namespace chatAppClient.View
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Database db = new Database();
+            this.NavigationService.Navigate(new ChatView(txtBoxUsername.Text));
+            /*Database db = new Database();
             if (db.validateUser(txtBoxUsername.Text, txtBoxPassword.Password.ToString()))               //validate user in mariadb 
             {
                 this.NavigationService.Navigate(new ChatView(txtBoxUsername.Text));                     //move to chat page after auth
@@ -36,7 +37,7 @@ namespace chatAppClient.View
             else
             {
                 MessageBox.Show("access denied");
-            }
+            }*/
         }
 
         private void txtNotRegistered_Click(object sender, RoutedEventArgs e)

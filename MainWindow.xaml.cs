@@ -1,4 +1,5 @@
-﻿using chatAppClient.View;
+﻿using chatAppClient.PureCSClass;
+using chatAppClient.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
