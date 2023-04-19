@@ -30,34 +30,40 @@ namespace chatAppClient.View
 
 
         static TcpClient tcpClient = new TcpClient("172.104.250.232", 6000);
+        StreamWriter streamWriter = new StreamWriter(tcpClient.GetStream());
         SocketHandle socketHandle = new SocketHandle();
 
         public ChatView(string text)
         {
             InitializeComponent();
-            
+            socketHandle.StartClient(text, streamWriter);
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             
-                if(tcpClient.Connected) 
+            if(tcpClient.Connected) 
             {
-                socketHandle.StartClient(txtChatSend.Text, tcpClient);
+                if (socketHandle.StartClient(txtChatSend.Text, streamWriter))
+                {
+                    //networkStream.Flush();
+                    streamWriter.Close();
+                    tcpClient.Dispose();
+                    tcpClient.Close();
+                }
             } else
             {
-                MessageBox.Show("disconnected");
+                MessageBox.Show("socket disconnected");
    
             }
-                
+            txtChatSend.Text = String.Empty;   
             
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            
-            tcpClient.Close();
-
+            socketHandle.StartClient("disconnected<EOF>", streamWriter);
+            //Application.Current.Shutdown();
         }
 
 
